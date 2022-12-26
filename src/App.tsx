@@ -1,61 +1,34 @@
 import React from 'react';
 import './App.css';
-import {findRenderedComponentWithType} from "react-dom/test-utils";
+// import {findRenderedComponentWithType} from "react-dom/test-utils";
+import Accordion from "./Components/Accordion/Accordion";
+import {Raiting} from "./Components/Raiting/Raiting";
 
 function App() {
     console.log('rendered App')
+
   return (
+
     <div className="App">
-        <Title/>
-        < Raiting/>
-        <Accordion/>
-        < Raiting/>
+        <Title title ={"This is App component"}/>
+        <Title title ={"My friends"}/>
+
+        <Accordion titleValue={"Menu"}  collapsed={true}/>
+        <Accordion titleValue={'List'}   collapsed={false}/>
+        < Raiting value={0}/>
+        < Raiting value={1}/>
+        < Raiting value={2}/>
+        < Raiting value={3}/>
+        < Raiting value={4}/>
+        < Raiting value={5}/>
+
 
     </div>
   );
 }
-function Title(){
-    return <>This is App component</>
+function Title(props:any){
+    return <h1>{props.titleValue}</h1>
 }
 
-function Raiting(){
-    console.log('rendered Raiting')
-    return(
-        <div>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
 
-        </div>
-    )
-}
-function Accordion(){
-    console.log('rendered Accordion')
-    return(
-        <div>
-            <AccordionTitle/>
-            <AccordionBody/>
-        </div>
-    )
-}
-
-function AccordionTitle(){
-    console.log('rendered AccordionTitle')
-    return<h3>Menu</h3>
-}
-function AccordionBody(){
-    console.log('rendered AccordionBody')
-   return( <ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-</ul>)
-}
-
-function Star(){
-    console.log('rendered Star')
-    return <div>star</div>
-}
 export default App;
