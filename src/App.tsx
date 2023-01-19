@@ -3,6 +3,9 @@ import './App.css';
 // import {findRenderedComponentWithType} from "react-dom/test-utils";
 import Accordion from "./Components/Accordion/Accordion";
 import {Raiting} from "./Components/Raiting/Raiting";
+import {OnOff} from "./Components/OnOff/OnOff";
+import UncontrolAccordion from "./Components/UncontrolAccordion/Accordion";
+import UncontrolledRaiting from "./Components/UncontroledRaiting/Raiting";
 
 function App() {
     console.log('rendered App')
@@ -10,17 +13,21 @@ function App() {
   return (
 
     <div className="App">
-        <Title title ={"This is App component"}/>
-        <Title title ={"My friends"}/>
+        <UncontrolAccordion titleValue={'Menu1'}/>
+        <UncontrolAccordion titleValue={'Menu2'}/>
+        <UncontrolledRaiting />
+        {/*<Title title ={"This is App component"}/>*/}
+        {/*<Title title ={"My friends"}/>*/}
 
-        <Accordion titleValue={"Menu"}  collapsed={true}/>
-        <Accordion titleValue={'List'}   collapsed={false}/>
-        < Raiting value={0}/>
-        < Raiting value={1}/>
-        < Raiting value={2}/>
-        < Raiting value={3}/>
-        < Raiting value={4}/>
-        < Raiting value={5}/>
+        {/*<Accordion titleValue={"Menu"}  collapsed={true}/>*/}
+        {/*<Accordion titleValue={'List'}   collapsed={false}/>*/}
+        {/*< Raiting value={0}/>*/}
+        {/*< Raiting value={1}/>*/}
+        {/*< Raiting value={2}/>*/}
+        {/*< Raiting value={3}/>*/}
+        {/*< Raiting value={4}/>*/}
+        {/*< Raiting value={5}/>*/}
+        <OnOff on={true}/>
 
 
     </div>
