@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {monitorEventLoopDelay} from "perf_hooks";
+
 
 
 type AccordionPropsType={
@@ -11,16 +11,16 @@ function UncontrolAccordion(props:AccordionPropsType) {
     const [collapsed, setCollapsed] = useState(true)
     console.log('rendered Accordion')
     const onClickHandler=()=>{
-       if(collapsed===true) setCollapsed(false)
-        if(collapsed===false) setCollapsed(true)
+       if(collapsed) setCollapsed(false)
+        if(!collapsed) setCollapsed(true)
 
     }
 
 
     return (
         <div>
-            <button onClick={()=>onClickHandler()}>Toggle</button>
-            <AccordionTitle title={props.titleValue}/>
+            {/*<button onClick={()=>onClickHandler()}>Toggle</button>*/}
+            <AccordionTitle title={props.titleValue} onclick={onClickHandler}/>
 
             {collapsed! && <AccordionBody/>}
         </div>
@@ -33,11 +33,12 @@ function UncontrolAccordion(props:AccordionPropsType) {
 
 type AccordionTitlePropsType={
     title:string
+    onclick:()=>void
 }
 function AccordionTitle(props:AccordionTitlePropsType){
 
     console.log('rendered AccordionTitle')
-    return<h3>{props.title}</h3>
+    return<h3 onClick={props.onclick} >{props.title}</h3>
 }
 function AccordionBody(){
     console.log('rendered AccordionBody')

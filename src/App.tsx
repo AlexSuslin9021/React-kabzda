@@ -4,8 +4,8 @@ import './App.css';
 import Accordion from "./Components/Accordion/Accordion";
 import {Raiting} from "./Components/Raiting/Raiting";
 import {OnOff} from "./Components/OnOff/OnOff";
-import UncontrolAccordion from "./Components/UncontrolAccordion/Accordion";
-import UncontrolledRaiting from "./Components/UncontroledRaiting/Raiting";
+import UncontrolAccordion from "./Components/UncontrolAccordion/UncontrolledAccordion";
+import UncontrolledRaiting from "./Components/UncontroledRaiting/UncontrolledRaiting";
 
 function App() {
     console.log('rendered App')
@@ -14,7 +14,7 @@ function App() {
 
     <div className="App">
         <UncontrolAccordion titleValue={'Menu1'}/>
-        <UncontrolAccordion titleValue={'Menu2'}/>
+
         <UncontrolledRaiting />
         {/*<Title title ={"This is App component"}/>*/}
         {/*<Title title ={"My friends"}/>*/}
@@ -24,7 +24,7 @@ function App() {
         {/*< Raiting value={0}/>*/}
         {/*< Raiting value={1}/>*/}
         {/*< Raiting value={2}/>*/}
-        {/*< Raiting value={3}/>*/}
+        < Raiting value={3}/>
         {/*< Raiting value={4}/>*/}
         {/*< Raiting value={5}/>*/}
         <OnOff on={true}/>
