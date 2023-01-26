@@ -10,6 +10,11 @@ import UncontrolledRaiting from "./Components/UncontroledRaiting/UncontrolledRai
 function App() {
    let[raiting,setRaiting ]=useState<RaitingType>(0)
 
+let[on, onSet]=useState<boolean>(false)
+
+const callback=(value:boolean)=>{
+       onSet(value)
+    }
 
   return (
 
@@ -29,7 +34,7 @@ function App() {
 
         {/*< Raiting value={4}/>*/}
         {/*< Raiting value={5}/>*/}
-        <OnOff on={true}/>
+        <OnOff on={on} callback={callback} />
 
 
     </div>

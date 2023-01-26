@@ -1,6 +1,8 @@
 
 type PropsOnOff={
     on:boolean
+    callback:(value:boolean)=>void
+
 }
 export function OnOff(props:PropsOnOff){
     const contentStyle={}
@@ -37,8 +39,8 @@ export function OnOff(props:PropsOnOff){
 
 
     return<div>
-        <div style={OnStyle}>on</div>
-        <div style={OfStyle}>off</div>
-        <div style={OStyle}></div>
+        <div style={OnStyle} onClick={()=>props.callback(!props.on)}>on</div>
+        <div style={OfStyle} onClick={()=>props.callback(!props.on)}>off</div>
+        <div style={OStyle} onClick={()=>props.callback(!props.on)}></div>
     </div>
 }
