@@ -1,14 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 // import {findRenderedComponentWithType} from "react-dom/test-utils";
 import Accordion from "./Components/Accordion/Accordion";
-import {Raiting} from "./Components/Raiting/Raiting";
+import {Raiting, RaitingType} from "./Components/Raiting/Raiting";
 import {OnOff} from "./Components/OnOff/OnOff";
 import UncontrolAccordion from "./Components/UncontrolAccordion/UncontrolledAccordion";
 import UncontrolledRaiting from "./Components/UncontroledRaiting/UncontrolledRaiting";
 
 function App() {
-    console.log('rendered App')
+   let[raiting,setRaiting ]=useState<RaitingType>(0)
+
 
   return (
 
@@ -16,6 +17,7 @@ function App() {
         <UncontrolAccordion titleValue={'Menu1'}/>
 
         <UncontrolledRaiting />
+        < Raiting value={raiting} onClickStar={setRaiting}/>
         {/*<Title title ={"This is App component"}/>*/}
         {/*<Title title ={"My friends"}/>*/}
 
@@ -24,7 +26,7 @@ function App() {
         {/*< Raiting value={0}/>*/}
         {/*< Raiting value={1}/>*/}
         {/*< Raiting value={2}/>*/}
-        < Raiting value={3}/>
+
         {/*< Raiting value={4}/>*/}
         {/*< Raiting value={5}/>*/}
         <OnOff on={true}/>
