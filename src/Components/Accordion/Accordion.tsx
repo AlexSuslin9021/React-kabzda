@@ -4,38 +4,27 @@ import {monitorEventLoopDelay} from "perf_hooks";
 
 type AccordionPropsType={
     titleValue:string
-   collapsed:true |false
+   collapsed:boolean
+    callback:(value:boolean)=>void
 
 }
 function Accordion(props:AccordionPropsType){
-    console.log('rendered Accordion')
-    if (props.collapsed){
-        return(
-        <div>
-                <AccordionTitle title={props.titleValue}/>
-                <AccordionBody/>
-            </div>
-    )}
-    else{
-        return(
-        <div>
-            <AccordionTitle title={props.titleValue}/>
-        </div>
-        )}
 
+    return props.collapsed ?
+        <div> <AccordionTitle title={props.titleValue} callback={props.callback}  collapsed={props.collapsed}/> <AccordionBody/></div>
+    :
+        <div><AccordionTitle title={props.titleValue} callback={props.callback}  collapsed={props.collapsed}/></div>
     }
-
-
-
-
 
 type AccordionTitlePropsType={
     title:string
+    callback:(value:boolean)=>void
+    collapsed:boolean
 }
 function AccordionTitle(props:AccordionTitlePropsType){
 
     console.log('rendered AccordionTitle')
-    return<h3>{props.title}</h3>
+    return<h3 onClick={()=>props.callback(!props.collapsed)}>{props.title}</h3>
 }
 function AccordionBody(){
     console.log('rendered AccordionBody')

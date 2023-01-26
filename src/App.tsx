@@ -11,22 +11,25 @@ function App() {
    let[raiting,setRaiting ]=useState<RaitingType>(0)
 
 let[on, onSet]=useState<boolean>(false)
+    let[collapsed, setCollapsed]=useState<boolean>(true)
+
 
 const callback=(value:boolean)=>{
        onSet(value)
     }
 
+
   return (
 
     <div className="App">
-        <UncontrolAccordion titleValue={'Menu1'}/>
+        {/*<UncontrolAccordion titleValue={'Menu1'}/>*/}
 
-        <UncontrolledRaiting />
-        < Raiting value={raiting} onClickStar={setRaiting}/>
+        {/*<UncontrolledRaiting />*/}
+        {/*< Raiting value={raiting} onClickStar={setRaiting}/>*/}
         {/*<Title title ={"This is App component"}/>*/}
         {/*<Title title ={"My friends"}/>*/}
 
-        {/*<Accordion titleValue={"Menu"}  collapsed={true}/>*/}
+        <Accordion titleValue={"Menu"}  collapsed={collapsed} callback={setCollapsed}/>
         {/*<Accordion titleValue={'List'}   collapsed={false}/>*/}
         {/*< Raiting value={0}/>*/}
         {/*< Raiting value={1}/>*/}
