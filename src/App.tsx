@@ -8,6 +8,7 @@ import UncontrolAccordion from "./Components/UncontrolAccordion/UncontrolledAcco
 import UncontrolledRaiting from "./Components/UncontroledRaiting/UncontrolledRaiting";
 import UncontrolledInput from "./Components/UncontrolledInput/UncontrolledInput";
 import Input from "./Components/Input/Input";
+import {SelectON} from "./Components/SelectOn/SelectOn";
 
 function App() {
    let[raiting,setRaiting ]=useState<RaitingType>(0)
@@ -24,17 +25,21 @@ const callback=(value:boolean)=>{
   return (
 
     <div className="App">
-        <Input/>
+
+        {/*<Input/>*/}
         {/*<UncontrolledInput/>*/}
 
-        <UncontrolAccordion titleValue={'Menu1'}/>
+        {/*<UncontrolAccordion titleValue={'Menu1'}/>*/}
 
-        <UncontrolledRaiting />
-        < Raiting value={raiting} onClickStar={setRaiting}/>
+        {/*<UncontrolledRaiting />*/}
+        {/*< Raiting value={raiting} onClickStar={setRaiting}/>*/}
         {/*<Title title ={"This is App component"}/>*/}
         {/*<Title title ={"My friends"}/>*/}
-
-        <Accordion titleValue={"Menu"}  collapsed={collapsed} callback={setCollapsed}/>
+        <SelectON/>
+        {/*<Accordion titleValue={"Menu"}  collapsed={collapsed} callback={setCollapsed} items={[*/}
+        {/*    {id:1, name:'alex'} ,*/}
+        {/*    {id:2, name:'anna'} ,*/}
+        {/*    {id:3, name:'dima'} ]}  />*/}
         {/*<Accordion titleValue={'List'}   collapsed={false}/>*/}
         {/*< Raiting value={0}/>*/}
         {/*< Raiting value={1}/>*/}
@@ -42,7 +47,7 @@ const callback=(value:boolean)=>{
 
         {/*< Raiting value={4}/>*/}
         {/*< Raiting value={5}/>*/}
-        <OnOff on={on} callback={callback} />
+        {/*<OnOff on={on} callback={callback} />*/}
 
 
     </div>
