@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import './App.css';
-// import {findRenderedComponentWithType} from "react-dom/test-utils";
+
 import Accordion from "./Components/Accordion/Accordion";
 import {Raiting, RaitingType} from "./Components/Raiting/Raiting";
 import {OnOff} from "./Components/OnOff/OnOff";
 import UncontrolAccordion from "./Components/UncontrolAccordion/UncontrolledAccordion";
 import UncontrolledRaiting from "./Components/UncontroledRaiting/UncontrolledRaiting";
+import UncontrolledInput from "./Components/UncontrolledInput/UncontrolledInput";
+import Input from "./Components/Input/Input";
 
 function App() {
    let[raiting,setRaiting ]=useState<RaitingType>(0)
@@ -22,10 +24,13 @@ const callback=(value:boolean)=>{
   return (
 
     <div className="App">
-        {/*<UncontrolAccordion titleValue={'Menu1'}/>*/}
+        <Input/>
+        {/*<UncontrolledInput/>*/}
 
-        {/*<UncontrolledRaiting />*/}
-        {/*< Raiting value={raiting} onClickStar={setRaiting}/>*/}
+        <UncontrolAccordion titleValue={'Menu1'}/>
+
+        <UncontrolledRaiting />
+        < Raiting value={raiting} onClickStar={setRaiting}/>
         {/*<Title title ={"This is App component"}/>*/}
         {/*<Title title ={"My friends"}/>*/}
 
