@@ -21,7 +21,7 @@ const callback=(value:boolean)=>{
        onSet(value)
     }
 
-
+const [collaps, setCollaps]=useState<boolean>(true)
   return (
 
     <div className="App">
@@ -35,7 +35,11 @@ const callback=(value:boolean)=>{
         {/*< Raiting value={raiting} onClickStar={setRaiting}/>*/}
         {/*<Title title ={"This is App component"}/>*/}
         {/*<Title title ={"My friends"}/>*/}
-        <SelectON/>
+        <SelectON items={[
+            {id:1, city: 'Minsk'},
+            {id:2, city: 'London'},
+            {id:3, city: 'LA'}
+        ]  } onChange={()=>setCollaps(!collaps) }collaps={collaps}/>
         {/*<Accordion titleValue={"Menu"}  collapsed={collapsed} callback={setCollapsed} items={[*/}
         {/*    {id:1, name:'alex'} ,*/}
         {/*    {id:2, name:'anna'} ,*/}
