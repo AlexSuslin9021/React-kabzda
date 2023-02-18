@@ -1,18 +1,15 @@
-import React, {useState} from "react";
-
-
+import React, {useReducer, useState} from "react";
+import { reducers, toggleCollapsed} from "./reducers";
 
 type AccordionPropsType={
-    titleValue:string
-   // collapsed:true |false
-
-}
+titleValue:string
+    }
 function UncontrolAccordion(props:AccordionPropsType) {
-    const [collapsed, setCollapsed] = useState(true)
+
+ const [store, dispatch]=useReducer(reducers, {collapsed:false})
     console.log('rendered Accordion')
     const onClickHandler=()=>{
-       if(collapsed) setCollapsed(false)
-        if(!collapsed) setCollapsed(true)
+     dispatch({type:toggleCollapsed})
 
     }
 
@@ -22,14 +19,10 @@ function UncontrolAccordion(props:AccordionPropsType) {
             {/*<button onClick={()=>onClickHandler()}>Toggle</button>*/}
             <AccordionTitle title={props.titleValue} onclick={onClickHandler}/>
 
-            {collapsed! && <AccordionBody/>}
+            {!store.collapsed && <AccordionBody/>}
         </div>
     )
 }
-
-
-
-
 
 type AccordionTitlePropsType={
     title:string
