@@ -1,5 +1,5 @@
 import React from "react";
-import {log} from "util";
+
 
 type itemsType={
 id:number,
@@ -14,12 +14,15 @@ type AccordionPropsType={
     items: itemsType[]
 
 }
-function Accordion(props:AccordionPropsType){
 
+export const AccordionSecret= React.memo(Accordion)
+const AccordionTitleSecret=React.memo(AccordionTitle)
+function Accordion(props:AccordionPropsType){
+    console.log('rendered AccordionSecret')
     return props.collapsed ?
-        <div> <AccordionTitle title={props.titleValue} callback={props.callback}  collapsed={props.collapsed}/> <AccordionBody onClick={()=>{}} items={props.items}/></div>
+        <div> <AccordionTitleSecret title={props.titleValue} callback={props.callback}  collapsed={props.collapsed}/> <AccordionBody onClick={()=>{}} items={props.items}/></div>
     :
-        <div><AccordionTitle title={props.titleValue} callback={props.callback}  collapsed={props.collapsed}/></div>
+        <div><AccordionTitleSecret title={props.titleValue} callback={props.callback}  collapsed={props.collapsed}/></div>
     }
 
 type AccordionTitlePropsType={
@@ -28,6 +31,7 @@ type AccordionTitlePropsType={
     collapsed:boolean
 }
 function AccordionTitle(props:AccordionTitlePropsType){
+
 
     console.log('rendered AccordionTitle')
     return<h3 onClick={()=>props.callback(!props.collapsed)}>{props.title}</h3>
@@ -38,7 +42,7 @@ type AccordionBodyProps={
     onClick:()=>void
 }
 function AccordionBody(props:AccordionBodyProps){
-    console.log('rendered AccordionBody')
+    // console.log('rendered AccordionBody')
 
     return( <ul>
         {props.items.map(i=><li onClick={()=>console.log(i.id)} key={i.id} >{i.name}</li>)}

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 
-import Accordion from "./Components/Accordion/Accordion";
+import Accordion, {AccordionSecret} from "./Components/Accordion/Accordion";
 import {Raiting, RaitingType} from "./Components/Raiting/Raiting";
 import {OnOff} from "./Components/OnOff/OnOff";
 import UncontrolAccordion from "./Components/UncontrolAccordion/UncontrolledAccordion";
@@ -9,6 +9,7 @@ import UncontrolledRaiting from "./Components/UncontroledRaiting/UncontrolledRai
 import UncontrolledInput from "./Components/UncontrolledInput/UncontrolledInput";
 import Input from "./Components/Input/Input";
 import {SelectON} from "./Components/SelectOn/SelectOn";
+import {Memo1} from "./Components/UseMemo";
 
 function App() {
    let[raiting,setRaiting ]=useState<RaitingType>(0)
@@ -26,10 +27,12 @@ const [collaps, setCollaps]=useState<boolean>(true)
 
     <div className="App">
 
+        <Memo1/>
+
         {/*<Input/>*/}
         {/*<UncontrolledInput/>*/}
 
-        <UncontrolAccordion titleValue={'Menu1'}/>
+        {/*<UncontrolAccordion titleValue={'Menu1'}/>*/}
 
         {/*<UncontrolledRaiting />*/}
         {/*< Raiting value={raiting} onClickStar={setRaiting}/>*/}
@@ -44,6 +47,12 @@ const [collaps, setCollaps]=useState<boolean>(true)
         {/*    {id:1, name:'alex'} ,*/}
         {/*    {id:2, name:'anna'} ,*/}
         {/*    {id:3, name:'dima'} ]}  />*/}
+        {/*<AccordionSecret titleValue={"Menu"}  collapsed={collapsed} callback={setCollapsed} items={[*/}
+        {/*    {id:1, name:'alex'} ,*/}
+        {/*    {id:2, name:'anna'} ,*/}
+        {/*    {id:3, name:'dima'} ]}  />*/}
+
+
         {/*<Accordion titleValue={'List'}   collapsed={false}/>*/}
         {/*< Raiting value={0}/>*/}
         {/*< Raiting value={1}/>*/}
