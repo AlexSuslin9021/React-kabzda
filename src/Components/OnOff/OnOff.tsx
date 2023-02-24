@@ -5,7 +5,9 @@ type PropsOnOff={
 
 }
 export function OnOff(props:PropsOnOff){
-    const contentStyle={}
+
+    console.log('OnOff')
+
    const OnStyle={
        width:'30px',
        height: '20px',

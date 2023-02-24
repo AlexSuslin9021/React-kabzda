@@ -6,6 +6,7 @@ type RaitingPropsType={
     onClickStar:(value:RaitingType)=>void
 }
 export function Raiting(props:RaitingPropsType) {
+    console.log('Raiting')
         return   <div>
         <Star selected={props.value >0} onClickStar={props.onClickStar} value={1}/>
         <Star selected={props.value >1} onClickStar={props.onClickStar} value={2}/>

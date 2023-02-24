@@ -9,64 +9,73 @@ import UncontrolledRaiting from "./Components/UncontroledRaiting/UncontrolledRai
 import UncontrolledInput from "./Components/UncontrolledInput/UncontrolledInput";
 import Input from "./Components/Input/Input";
 import {SelectON} from "./Components/SelectOn/SelectOn";
-import {Memo1} from "./Components/UseMemo";
+import { Example1M} from "./Components/UseMemo";
+import {HelpsToReactMemo, Memo1} from "./Components/HelpsToReactMemo/HelpsToReactMemo";
+
+const Example1=React.memo(Example1M)
+const Raiting12=React.memo(Raiting)
+const OnOffM=React.memo(OnOff)
 
 function App() {
-   let[raiting,setRaiting ]=useState<RaitingType>(0)
-
-let[on, onSet]=useState<boolean>(false)
-    let[collapsed, setCollapsed]=useState<boolean>(true)
-
-
-const callback=(value:boolean)=>{
-       onSet(value)
+    let [raiting, setRaiting] = useState<RaitingType>(0)
+    let [on, onSet] = useState<boolean>(false)
+    let [collapsed, setCollapsed] = useState<boolean>(true)
+    const callback = (value: boolean) => {
+        onSet(value)
     }
+    const [collaps, setCollaps] = useState<boolean>(true)
 
-const [collaps, setCollaps]=useState<boolean>(true)
-  return (
+    return (
 
-    <div className="App">
-
-        <Memo1/>
-
-        {/*<Input/>*/}
-        {/*<UncontrolledInput/>*/}
-
-        {/*<UncontrolAccordion titleValue={'Menu1'}/>*/}
-
-        {/*<UncontrolledRaiting />*/}
-        {/*< Raiting value={raiting} onClickStar={setRaiting}/>*/}
-        {/*<Title title ={"This is App component"}/>*/}
-        {/*<Title title ={"My friends"}/>*/}
-        {/*<SelectON items={[*/}
-        {/*    {id:1, city: 'Minsk'},*/}
-        {/*    {id:2, city: 'London'},*/}
-        {/*    {id:3, city: 'LA'}*/}
-        {/*]  } onChange={()=>setCollaps(!collaps) }collaps={collaps}/>*/}
-        {/*<Accordion titleValue={"Menu"}  collapsed={collapsed} callback={setCollapsed} items={[*/}
-        {/*    {id:1, name:'alex'} ,*/}
-        {/*    {id:2, name:'anna'} ,*/}
-        {/*    {id:3, name:'dima'} ]}  />*/}
-        {/*<AccordionSecret titleValue={"Menu"}  collapsed={collapsed} callback={setCollapsed} items={[*/}
-        {/*    {id:1, name:'alex'} ,*/}
-        {/*    {id:2, name:'anna'} ,*/}
-        {/*    {id:3, name:'dima'} ]}  />*/}
+        <div className="App">
 
 
-        {/*<Accordion titleValue={'List'}   collapsed={false}/>*/}
-        {/*< Raiting value={0}/>*/}
-        {/*< Raiting value={1}/>*/}
-        {/*< Raiting value={2}/>*/}
+            {/*<Memo12/>*/}
+            {/*<HelpsToReactMemo/>*/}
 
-        {/*< Raiting value={4}/>*/}
-        {/*< Raiting value={5}/>*/}
-        {/*<OnOff on={on} callback={callback} />*/}
+            {/*<Example1/>*/}
+            {/*<Input/>*/}
+            {/*<UncontrolledInput/>*/}
+
+            {/*<UncontrolAccordion titleValue={'Menu1'}/>*/}
+
+            {/*<UncontrolledRaiting/>*/}
+            < Raiting12 value={raiting} onClickStar={setRaiting}/>
+            <Example1/>
+
+            {/*<Title title={"This is App component"}/>*/}
+            {/*<Title title={"My friends"}/>*/}
+            {/*<SelectON items={[*/}
+            {/*    {id: 1, city: 'Minsk'},*/}
+            {/*    {id: 2, city: 'London'},*/}
+            {/*    {id: 3, city: 'LA'}*/}
+            {/*]} onChange={() => setCollaps(!collaps)} collaps={collaps}/>*/}
+            {/*<Accordion titleValue={"Menu"} collapsed={collapsed} callback={setCollapsed} items={[*/}
+            {/*    {id: 1, name: 'alex'},*/}
+            {/*    {id: 2, name: 'anna'},*/}
+            {/*    {id: 3, name: 'dima'}]}/>*/}
+            {/*<AccordionSecret titleValue={"Menu"} collapsed={collapsed} callback={setCollapsed} items={[*/}
+            {/*    {id: 1, name: 'alex'},*/}
+            {/*    {id: 2, name: 'anna'},*/}
+            {/*    {id: 3, name: 'dima'}]}/>*/}
 
 
-    </div>
-  );
+            {/*<Accordion titleValue={'List'}   collapsed={false}/>*/}
+            {/*< Raiting value={0}/>*/}
+            {/*< Raiting value={1}/>*/}
+            {/*< Raiting value={2}/>*/}
+
+            {/*< Raiting value={4}/>*/}
+            {/*< Raiting value={5}/>*/}
+            <div>
+            <OnOffM on={on} callback={callback}/>
+        </div>
+
+        </div>
+    );
 }
-function Title(props:any){
+
+function Title(props: any) {
     return <h1>{props.titleValue}</h1>
 }
 
