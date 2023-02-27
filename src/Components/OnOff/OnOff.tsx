@@ -1,12 +1,14 @@
 
 type PropsOnOff={
     on:boolean
-    callback:(value:boolean)=>void
+    callback:(check:boolean)=>void
 
 }
 export function OnOff(props:PropsOnOff){
 
+
     console.log('OnOff')
+
 
    const OnStyle={
        width:'30px',

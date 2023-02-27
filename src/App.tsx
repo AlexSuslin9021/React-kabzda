@@ -19,11 +19,11 @@ const OnOffM=React.memo(OnOff)
 function App() {
     let [raiting, setRaiting] = useState<RaitingType>(0)
     let [on, onSet] = useState<boolean>(false)
-    let [collapsed, setCollapsed] = useState<boolean>(true)
-    const callback = (value: boolean) => {
-        onSet(value)
+    // let [collapsed, setCollapsed] = useState<boolean>(true)
+    const callback = (check: boolean) => {
+        onSet(check)
     }
-    const [collaps, setCollaps] = useState<boolean>(true)
+    // const [collaps, setCollaps] = useState<boolean>(true)
 
     return (
 
@@ -40,7 +40,8 @@ function App() {
             {/*<UncontrolAccordion titleValue={'Menu1'}/>*/}
 
             {/*<UncontrolledRaiting/>*/}
-            < Raiting12 value={raiting} onClickStar={setRaiting}/>
+            < Raiting12 raiting={raiting} onClickStar={setRaiting}/>
+            {/*<OnOffM on={on} callback={callback}/>*/}
             <Example1/>
 
             {/*<Title title={"This is App component"}/>*/}
@@ -66,10 +67,8 @@ function App() {
             {/*< Raiting value={2}/>*/}
 
             {/*< Raiting value={4}/>*/}
-            {/*< Raiting value={5}/>*/}
-            <div>
-            <OnOffM on={on} callback={callback}/>
-        </div>
+
+
 
         </div>
     );
